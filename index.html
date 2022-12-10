@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <script src='https://unpkg.com/tesseract.js@4.0.0/dist/tesseract.min.js'></script>
+    <script src="./app.js"></script>
+</head>
+
+<body>
+    <style>
+        .file-uploader {
+            font-size: 75px;
+            border-width: 1px;
+            border-style: solid;
+            border-color: black;
+            border-radius: 15px;
+            padding: 5px;
+        }
+    </style>
+
+    <input type="file" id="file-uploader" style="display: none;" accept="image/png, image/jpg" onchange="
+        loadFile(event);
+        convert_to_text('deu');
+        ">
+    <label for="file-uploader" class="file-uploader">Choose File</label>
+    <br>
+
+    <progress id="progress_bar" value="0" max="100" style="width: 800px; height: 50px;"></progress>
+    <br>
+
+    <img id="image" width="800px">
+    <br>
+
+    <p id="result" style="font-size: 50px;"></p>
+    <br>
+
+
+</body>
+
+</html>
